@@ -6,3 +6,4 @@ This is the AES encryption and decryption function of OpenSSL in Linux environme
     Decrypt : ./openssl-crypto -d -i inputfile -o outfile
 
 
+[![Build Status](https://travis-ci.com/songshuaisong/Openssl-AES-Crypto.svg?branch=master)](https://travis-ci.com/songshuaisong/Openssl-AES-Crypto)
