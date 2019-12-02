@@ -66,7 +66,7 @@ int decrypt(unsigned char *key, unsigned char *input, int in_length, unsigned ch
 	return 0;
 }
 
-int get_file_size(unsigned char *filename)
+int get_file_size(char *filename)
 {
 	int fd;
 	struct stat istat;
@@ -82,22 +82,20 @@ int get_file_size(unsigned char *filename)
 	return istat.st_size;
 }
 
-int main(int argc, const char *argv[])
+int main(int argc, const char **argv)
 {
 	int ch;
 	int encypt = 0;
 	opterr = 0;
-	unsigned char *infile = NULL;
-	unsigned char *outfile = NULL;
+	char *infile = NULL, *outfile = NULL;
 	unsigned char *tmp = NULL;
 	unsigned char inbuf[BUF_SZ + 16] = {0};
 	unsigned char outbuf[BUF_SZ + 16] = {0};
-	int ifd, ofd;
-	int file_sz = 0;
-	int ret, read_cn, write_cn;
-	int left;
+	int ifd, ofd, left, file_sz = 0;
+	int ret, read_cn, write_cn, i = 0;
+	int;
 
-	while ((ch = getopt(argc, argv, "dei:o:")) != -1)
+	while ((ch = getopt(argc, (char *const *)argv, "dei:o:")) != -1)
 	{
 		switch (ch)
 		{
@@ -116,17 +114,18 @@ int main(int argc, const char *argv[])
 		default:
 			usage();
 		}
+		i++;
 	}
 
 	if (optind > argc)
 	{
-		fprintf(stderr, "Too few arguments to ispen\n", errno);
+		fprintf(stderr, "%d, Too few arguments to ispen\n", errno);
 		usage();
 	}
 
 	if (!infile || !outfile)
 	{
-		fprintf(stderr, "Too few arguments to ispen\n", errno);
+		fprintf(stderr, "%d, Too few arguments to ispen\n", errno);
 		usage();
 	}
 
