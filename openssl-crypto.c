@@ -93,7 +93,6 @@ int main(int argc, const char **argv)
 	unsigned char outbuf[BUF_SZ + 16] = {0};
 	int ifd, ofd, left, file_sz = 0;
 	int ret, read_cn, write_cn, i = 0;
-	int;
 
 	while ((ch = getopt(argc, (char *const *)argv, "dei:o:")) != -1)
 	{
