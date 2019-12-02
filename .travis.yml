@@ -1,4 +1,4 @@
-languare: c
+languare: C
 notifications:
   email:
     on_success: always
