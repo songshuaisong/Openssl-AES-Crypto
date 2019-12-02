@@ -1,5 +1,5 @@
 languare: c
-notifications:
+notification:
   email:
     on_success: always
     on_failure: always
