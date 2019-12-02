@@ -1,5 +1,5 @@
 os: linux
-languare: C
+language: C
 notifications:
   email:
     on_success: always
