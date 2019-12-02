@@ -1,0 +1,9 @@
+os: linux
+languare: C
+notifications:
+  email:
+    on_success: always
+    on_failure: always
+script:
+  - make 
+  - make test
